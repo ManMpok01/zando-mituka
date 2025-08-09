@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zando Mituka - Administration</title>
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="admin-brand">
+                    <div class="brand-icon">Z</div>
+                    <h2>Zando Mituka</h2>
+                    <span>Administration</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link" data-section="dashboard">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Tableau de bord</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#vehicles" class="nav-link" data-section="vehicles">
+                            <i class="fas fa-car"></i>
+                            <span>Véhicules</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#selection" class="nav-link" data-section="selection">
+                            <i class="fas fa-star"></i>
+                            <span>Sélection</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#orders" class="nav-link" data-section="orders">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Commandes</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Tableau de bord</h1>
+                </div>
+                <div class="header-right">
+                    <a href="/" class="btn btn-outline">
+                        <i class="fas fa-home"></i>
+                        Retour au site
+                    </a>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Déconnexion
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section class="content-section active" id="dashboard-section">
+                <div class="section-header">
+                    <h2>Vue d'ensemble de votre boutique</h2>
+                </div>
+                
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card blue">
+                        <div class="stat-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="total-vehicles">0</div>
+                            <div class="stat-label">Véhicules</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card green">
+                        <div class="stat-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="stock-vehicles">0</div>
+                            <div class="stat-label">En Stock</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card orange">
+                        <div class="stat-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="total-orders">0</div>
+                            <div class="stat-label">Commandes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card purple">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="revenue">$0</div>
+                            <div class="stat-label">Chiffre d'affaires</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Placeholder -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Véhicules les plus vendus</h3>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-bar"></i>
+                            <p>Graphique des ventes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h3>Évolution des commandes</h3>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Graphique temporel</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vehicles Section -->
+            <section class="content-section" id="vehicles-section">
+                <div class="section-header">
+                    <h2>Gestion des Véhicules de Stock</h2>
+                    <button class="btn btn-primary" id="add-vehicle-btn">
+                        <i class="fas fa-plus"></i>
+                        Ajouter un véhicule
+                    </button>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Marque</th>
+                                <th>Modèle</th>
+                                <th>Prix</th>
+                                <th>Catégorie</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vehicles-table">
+                            <!-- Les véhicules seront chargés ici -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Selection Section -->
+            <section class="content-section" id="selection-section">
+                <div class="section-header">
+                    <h2>Gestion de la Sélection Hebdomadaire</h2>
+                    <button class="btn btn-primary" id="add-selection-btn">
+                        <i class="fas fa-plus"></i>
+                        Ajouter à la sélection
+                    </button>
+                </div>
+                
+                <div class="selection-tabs">
+                    <button class="tab-btn active" data-tab="nouveaux">Nouveaux Arrivages</button>
+                    <button class="tab-btn" data-tab="soldes">Soldes de la Semaine</button>
+                    <button class="tab-btn" data-tab="vedettes">Modèles en Vedette</button>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Marque</th>
+                                <th>Modèle</th>
+                                <th>Prix</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="selection-table">
+                            <!-- La sélection sera chargée ici -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section class="content-section" id="orders-section">
+                <div class="section-header">
+                    <h2>Gestion des Commandes</h2>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Client</th>
+                                <th>Véhicule</th>
+                                <th>Prix</th>
+                                <th>Téléphone</th>
+                                <th>Statut</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table">
+                            <!-- Les commandes seront chargées ici -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Véhicule -->
+    <div class="modal" id="vehicle-modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2 id="vehicle-modal-title">Ajouter un véhicule</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form class="vehicle-form" id="vehicle-form" enctype="multipart/form-data">
+                <input type="hidden" id="vehicle-edit-id">
+                <input type="hidden" id="vehicle-type" value="stock">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="marque">Marque *</label>
+                        <select id="marque" name="marque" required>
+                            <option value="">Sélectionnez une marque</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Mercedes">Mercedes</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Mazda">Mazda</option>
+                            <option value="Land Rover">Land Rover</option>
+                            <option value="Jeep">Jeep</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="modele">Modèle *</label>
+                        <input type="text" id="modele" name="modele" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prix">Prix ($) *</label>
+                        <input type="number" id="prix" name="prix" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="annee">Année de fabrication *</label>
+                        <input type="number" id="annee" name="annee" min="1990" max="2025" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="kilometrage">Kilométrage (km) *</label>
+                        <input type="number" id="kilometrage" name="kilometrage" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="transmission">Transmission *</label>
+                        <select id="transmission" name="transmission" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="Manuelle">Manuelle</option>
+                            <option value="Automatique">Automatique</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="carburant">Type de carburant *</label>
+                        <select id="carburant" name="carburant" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="Essence">Essence</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Hybride">Hybride</option>
+                            <option value="Électrique">Électrique</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cote-volant">Côté volant *</label>
+                        <select id="cote-volant" name="coteVolant" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="Gauche">Gauche</option>
+                            <option value="Droite">Droite</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="categorie">Catégorie *</label>
+                    <select id="categorie" name="categorie" required>
+                        <option value="">Sélectionnez une catégorie</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Citadine">Citadine</option>
+                        <option value="Pickup">Pickup</option>
+                        <option value="Van">Van</option>
+                        <option value="Berline">Berline</option>
+                        <option value="Sport">Sport</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="selection-type-group" style="display: none;">
+                    <label for="selection-type">Type de sélection</label>
+                    <select id="selection-type" name="selectionType">
+                        <option value="nouveaux">Nouveaux Arrivages</option>
+                        <option value="soldes">Soldes de la Semaine</option>
+                        <option value="vedettes">Modèles en Vedette</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="features">Fonctionnalités (séparées par des virgules)</label>
+                    <input type="text" id="features" name="features" placeholder="Climatisation, GPS, Bluetooth, Caméra de recul...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="commentaires">Commentaires/Description</label>
+                    <textarea id="commentaires" name="commentaires" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="vehicle-images">Images du véhicule *</label>
+                    <input type="file" id="vehicle-images" name="images" multiple accept="image/*" required>
+                    <small>La première image sera utilisée comme image principale</small>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline close-modal">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

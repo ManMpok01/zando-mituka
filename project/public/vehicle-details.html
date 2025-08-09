@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du véhicule - Zando Mituka</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/vehicle-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h2 class="brand-text">Zando Mituka</h2>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/#vehicules">Nos Véhicules</a></li>
+                    <li><a href="/#services">Nos Services</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Vehicle Details -->
+    <main class="vehicle-details" id="vehicle-details">
+        <!-- Le contenu sera chargé dynamiquement -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <h3>Zando Mituka</h3>
+                        <p>Votre partenaire automobile de confiance à Lubumbashi.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zando Mituka. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de commande -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Commander ce véhicule</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form class="order-form" id="order-form">
+                <input type="hidden" id="vehicle-id">
+                <div class="form-group">
+                    <label for="nom-complet">Nom complet *</label>
+                    <input type="text" id="nom-complet" name="nomComplet" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Numéro de téléphone *</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse *</label>
+                    <textarea id="adresse" name="adresse" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="moyen-paiement">Moyen de paiement *</label>
+                    <select id="moyen-paiement" name="moyenPaiement" required>
+                        <option value="">Sélectionnez un moyen de paiement</option>
+                        <option value="Espèces">Espèces</option>
+                        <option value="Virement bancaire">Virement bancaire</option>
+                        <option value="Chèque">Chèque</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date-livraison">Date de livraison *</label>
+                    <input type="date" id="date-livraison" name="dateLivraison" required>
+                </div>
+                <div class="form-group">
+                    <label for="heure-livraison">Heure de livraison *</label>
+                    <input type="time" id="heure-livraison" name="heureLivraison" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirmer la commande</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/vehicle-details.js"></script>
+</body>
+</html>

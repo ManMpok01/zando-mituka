@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zando Mituka - Votre Partenaire Automobile de Confiance</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="assets/logo.png" alt="Zando Mituka" class="logo" onerror="this.style.display='none'">
+                <h2 class="brand-text">Zando Mituka</h2>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#vehicules">Nos Véhicules</a></li>
+                    <li><a href="#services">Nos Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn-search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="/admin" class="btn btn-outline">Admin</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-bg">
+            <img src="https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg" alt="Showroom automobiles" class="hero-image">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Votre Partenaire Automobile de <span class="gold-text">Confiance</span></h1>
+                <p class="hero-subtitle">Découvrez notre collection exclusive de véhicules premium et d'accessoires automobiles. Qualité, performance et service exceptionnel vous attendent.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">Découvrir nos véhicules</button>
+                    <button class="btn btn-outline">Nos Services</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats -->
+        <div class="hero-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <i class="fas fa-car"></i>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Véhicules disponibles</div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-number">5k+</div>
+                        <div class="stat-label">Clients satisfaits</div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Note moyenne</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Produits & Services</h2>
+                <p class="section-subtitle">Découvrez notre gamme complète d'accessoires automobiles et de services premium</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="service-title">Vente Véhicules</h3>
+                    <p class="service-description">Large sélection de véhicules neufs et d'occasion de qualité premium</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="service-title">Location Véhicules</h3>
+                    <p class="service-description">Service de location flexible pour tous vos déplacements</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="service-title">Livraison à Domicile</h3>
+                    <p class="service-description">Livraison rapide et sécurisée directement chez vous</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="service-title">Location Chauffeur</h3>
+                    <p class="service-description">Chauffeurs professionnels pour vos déplacements en toute sérénité</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sélection Hebdomadaire -->
+    <section class="weekly-selection">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sélection de la Semaine</h2>
+                <p class="section-subtitle">Découvrez nos meilleures offres et nouveautés</p>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="nouveaux">Nouveaux Arrivages</button>
+                <button class="tab-btn" data-tab="soldes">Soldes de la Semaine</button>
+                <button class="tab-btn" data-tab="vedettes">Modèles en Vedette</button>
+            </div>
+            
+            <div class="tab-content active" id="nouveaux">
+                <div class="vehicles-grid" id="nouveaux-grid"></div>
+            </div>
+            
+            <div class="tab-content" id="soldes">
+                <div class="vehicles-grid" id="soldes-grid"></div>
+            </div>
+            
+            <div class="tab-content" id="vedettes">
+                <div class="vehicles-grid" id="vedettes-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Véhicules -->
+    <section class="our-vehicles" id="vehicules">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Collection de Véhicules</h2>
+                <p class="section-subtitle">Explorez notre sélection de véhicules premium des plus grandes marques</p>
+            </div>
+            
+            <!-- Filtres par Marques -->
+            <div class="brands-filter">
+                <h3>Nos Marques Partenaires</h3>
+                <div class="brands-list">
+                    <button class="brand-btn active" data-brand="Toutes">
+                        <span>Toutes</span>
+                    </button>
+                    <button class="brand-btn" data-brand="Toyota">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/09/Toyota-Logo.png" alt="Toyota" onerror="this.style.display='none'">
+                        <span>Toyota</span>
+                    </button>
+                    <button class="brand-btn" data-brand="Mercedes">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/05/Mercedes-Benz-Logo.png" alt="Mercedes" onerror="this.style.display='none'">
+                        <span>Mercedes</span>
+                    </button>
+                    <button class="brand-btn" data-brand="BMW">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/05/BMW-Logo.png" alt="BMW" onerror="this.style.display='none'">
+                        <span>BMW</span>
+                    </button>
+                    <button class="brand-btn" data-brand="Mazda">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/03/Mazda-Logo.png" alt="Mazda" onerror="this.style.display='none'">
+                        <span>Mazda</span>
+                    </button>
+                    <button class="brand-btn" data-brand="Land Rover">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/03/Land-Rover-Logo.png" alt="Land Rover" onerror="this.style.display='none'">
+                        <span>Land Rover</span>
+                    </button>
+                    <button class="brand-btn" data-brand="Jeep">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/03/Jeep-Logo.png" alt="Jeep" onerror="this.style.display='none'">
+                        <span>Jeep</span>
+                    </button>
+                    <button class="brand-btn" data-brand="Nissan">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/03/Nissan-Logo.png" alt="Nissan" onerror="this.style.display='none'">
+                        <span>Nissan</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Filtres par Catégories -->
+            <div class="categories-filter">
+                <div class="categories-list">
+                    <button class="category-btn active" data-category="Toutes">
+                        <i class="fas fa-car"></i>
+                        <span>Toutes</span>
+                    </button>
+                    <button class="category-btn" data-category="SUV">
+                        <i class="fas fa-truck"></i>
+                        <span>SUV</span>
+                    </button>
+                    <button class="category-btn" data-category="Citadine">
+                        <i class="fas fa-car-side"></i>
+                        <span>Citadines</span>
+                    </button>
+                    <button class="category-btn" data-category="Pickup">
+                        <i class="fas fa-truck-pickup"></i>
+                        <span>Pickup</span>
+                    </button>
+                    <button class="category-btn" data-category="Van">
+                        <i class="fas fa-shuttle-van"></i>
+                        <span>Van</span>
+                    </button>
+                    <button class="category-btn" data-category="Berline">
+                        <i class="fas fa-car"></i>
+                        <span>Berline</span>
+                    </button>
+                    <button class="category-btn" data-category="Sport">
+                        <i class="fas fa-car-alt"></i>
+                        <span>Sport</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Grille des véhicules -->
+            <div class="vehicles-grid" id="vehicles-stock-grid"></div>
+            
+            <!-- Bouton Voir Plus -->
+            <div class="load-more-container">
+                <button class="btn btn-outline" id="load-more-btn">Voir plus de véhicules</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Restez Informé de Nos Nouveautés</h2>
+                <p>Inscrivez-vous à notre newsletter pour recevoir les dernières offres, nouveaux véhicules et actualités exclusives</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <h3>Zando Mituka</h3>
+                        <p>Votre partenaire automobile de confiance à Lubumbashi depuis 2020. Nous offrons les meilleurs véhicules et services pour satisfaire tous vos besoins de mobilité.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#vehicules">Nos Véhicules</a></li>
+                        <li><a href="#services">Nos Services</a></li>
+                        <li><a href="#contact">À Propos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Catégories</h4>
+                    <ul>
+                        <li><a href="#">SUV & 4x4</a></li>
+                        <li><a href="#">Citadines</a></li>
+                        <li><a href="#">Berlines</a></li>
+                        <li><a href="#">Pickups</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +243 999 101 335</p>
+                        <p><i class="fas fa-envelope"></i> contact@zandomituka.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> GOOF-HAS Rd, Kolwezi</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zando Mituka. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                    <a href="#">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de commande -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Commander ce véhicule</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form class="order-form" id="order-form">
+                <input type="hidden" id="vehicle-id">
+                <div class="form-group">
+                    <label for="nom-complet">Nom complet *</label>
+                    <input type="text" id="nom-complet" name="nomComplet" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Numéro de téléphone *</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse *</label>
+                    <textarea id="adresse" name="adresse" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="moyen-paiement">Moyen de paiement *</label>
+                    <select id="moyen-paiement" name="moyenPaiement" required>
+                        <option value="">Sélectionnez un moyen de paiement</option>
+                        <option value="Espèces">Espèces</option>
+                        <option value="Virement bancaire">Virement bancaire</option>
+                        <option value="Chèque">Chèque</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date-livraison">Date de livraison *</label>
+                    <input type="date" id="date-livraison" name="dateLivraison" required>
+                </div>
+                <div class="form-group">
+                    <label for="heure-livraison">Heure de livraison *</label>
+                    <input type="time" id="heure-livraison" name="heureLivraison" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirmer la commande</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
